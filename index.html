@@ -52,44 +52,44 @@ also the fever question was difficult to fully assign points for the cold sympto
 //the variables are defined as their illness names and follow the same pattern described in deatil for the covid variables. the variable's starting values are zero before the questions are answered.
 
 	function covidrareAdd() {
-		covidrare_count = covidrare_count + 0.333
-	};
+		covidrare_count = covidrare_count + 0.333;
+	}
 	function covidsomeAdd() {
-		covidsome_count = covidsome_count + 0.667
-	};
+		covidsome_count = covidsome_count + 0.667;
+	}
 	function covidcomAdd() {
-		covidcom_count = covidcom_count + 1
-	};
+		covidcom_count = covidcom_count + 1;
+	}
 	
 	
 	function coldrareAdd() {
-		coldrare_count = coldrare_count + 0.333
-	};
+		coldrare_count = coldrare_count + 0.333;
+	}
 	function covidsomeAdd() {
-		coldsome_count = coldsome_count + 0.667
-	};
+		coldsome_count = coldsome_count + 0.667;
+	}
 	function covidcomAdd() {
-		coldcom_count = coldcom_count + 1
-	};
+		coldcom_count = coldcom_count + 1;
+	}
 	
 	
 	function flusomeAdd() {
-		flusome_count = flusome_count + 0.667
-	};
+		flusome_count = flusome_count + 0.667;
+	}
 	function flucomAdd() {
-		flucom_count = flucom_count + 1
-	};
+		flucom_count = flucom_count + 1;
+	}
 	
 	
 	function allergyrareAdd() {
-		allergyrare_count = allergyrare_count + 0.333
-	};
+		allergyrare_count = allergyrare_count + 0.333;
+	}
 	function allergysomeAdd() {
-		allergysome_count = allergysome_count + 0.667
-	};
+		allergysome_count = allergysome_count + 0.667;
+	}
 	function covidcomAdd() {
-		allergycom_count = allergycom_count + 1
-	};
+		allergycom_count = allergycom_count + 1;
+	}
 	
        /* function concussionAdd(){
             concussion_count = concussion_count + 1;
@@ -101,19 +101,19 @@ also the fever question was difficult to fully assign points for the cold sympto
             minor_count = minor_count + 1;	//this function will increase the minor head injury count by one each time the function is called
         } */
 	
-		var covid_count = covidrare_count + covidsome_count + covidcom_count //this is the total count for covid (the summative value of it's subvariables)
-		var cold_count = coldrare_count + coldsome_count + coldcom_count
-		var flu_count = flusome_count + flucom_count
-		var allergy_count = allergyrare_count + allergysome_count + allergycom_count
+		var covid_count = covidrare_count + covidsome_count + covidcom_count; //this is the total count for covid (the summative value of it's subvariables)
+		var cold_count = coldrare_count + coldsome_count + coldcom_count;
+		var flu_count = flusome_count + flucom_count;
+		var allergy_count = allergyrare_count + allergysome_count + allergycom_count;
 	
 	function display_results(){
 		var resultText = document.getElementById("result");
 		var covidPercent= (covid_count / (covid_count + cold_count + flu_count + allergy_count)) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
 		var coldPercent= (cold_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
 		var fluPercent= (flu_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
-		var allergyPercent= (allergy_count / (covid_count + cold_count + flu_count + allergy_count)) * 100
+		var allergyPercent= (allergy_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
 		resultText.innerHTML = "Probability it is COVID-19 (coronavirus) =" + covidPercent + "%<br> Probability it is a Cold =" + coldPercent + "%<br> Probability it is the Flu =" + fluPercent + "%<br> Probability it is Allergies =" + allergyPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values (also the minorPercent and concussionPercent are not glowing orange?)
-	};
+	}
 	
 	//this function will do the math and print results onclick for the results page
 		
