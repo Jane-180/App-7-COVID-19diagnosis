@@ -31,9 +31,22 @@ If you press the back button and select a new answer the code still accounts for
    </head> 
 
 <script>
-        var minor_count = 0;
-        var concussion_count = 0;
-//the variables are defined as minor for minor head injury and concussion for any detectable grade concussion. Both variables starting values are zero before the questions are answered.
+        var covid_count = 0; //this is the total count for covid it will eventually be the summative value of it's subvariables
+		var covidrare_count = 0; //the count for symptoms that rarely happen in covid
+		var covidsome_count = 0; //the count for symptoms that sometimes occur with covid
+		var covidcom_count = 0; //the count for symptoms that commonlly occur in covid
+        var cold_count = 0;
+		var coldrare_count = 0;
+		var coldsome_count = 0;
+		var coldcom_count = 0;
+	var flu_count = 0;
+		var flusome_count = 0;
+		var flucom_count = 0;
+	var allergy_count = 0;
+		var allergyrare_count = 0;
+		var allergysome_count = 0;
+		var allergycom_count = 0;
+//the variables are defined as their illness names and follow the same pattern described in deatil for the covid variables. the variable's starting values are zero before the questions are answered.
 
         function concussionAdd(){
             concussion_count = concussion_count + 1;
