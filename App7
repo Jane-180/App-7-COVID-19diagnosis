@@ -16,11 +16,10 @@ Timothy Riedel
 triedel@utexas.edu
  
 Brief Description of Goal of Code:
-Assist in diagnosing concussion in need or medical attention versus a minor head injury
+Assist in detecting symptoms of COVID-19 from cold, flu, or allergies
  
 Known Issues:
-The weight of each question; some responses may be more severe than others
-If you press the back button and select a new answer the code still accounts for the old answer this changing the actual 
+If you press the back button and select a new answer the code still accounts for the old answer this changing the actual percentage. So no going back to previous questions.
 -->
 
    <head> 
