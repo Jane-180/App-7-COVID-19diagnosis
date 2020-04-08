@@ -20,6 +20,7 @@ Assist in detecting symptoms of COVID-19 from cold, flu, or allergies
  
 Known Issues:
 If you press the back button and select a new answer the code still accounts for the old answer this changing the actual percentage. So no going back to previous questions.
+also the calculation for the coughing question for a cold it is common but not neccessarly dry, but I just classified a yes response as +1 anyways
 -->
 
    <head> 
@@ -126,9 +127,9 @@ If you press the back button and select a new answer the code still accounts for
 	//this function will do the math and print results onclick for the results page
 	
 // This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
-       //var docMod = document.lastModified;
-      // alert("This file last modified  " + docMod);
-      // console.log("This file last modified  " + docMod);
+       var docMod = document.lastModified;
+       alert("This file last modified  " + docMod);
+       console.log("This file last modified  " + docMod);
   </script>
 
 
@@ -165,11 +166,11 @@ If you press the back button and select a new answer the code still accounts for
 	
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
-	<h1>Concussion or Minor Head Injury?</h1> <!-- this will print a large title that describes the survey-->
+	<h1>COVID-19 or Something Else?</h1> <!-- this will print a large title that describes the survey-->
 </div> <!--this divides the page into the next section which will have smnaller font and a different position-->
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have a concussion but wonder if it is just a minor head injury? Answer a few short questions to find out!</p> <!--this provides for the survey; a hook and description-->
+	<p>Are you feeling like you might have COVID-19 (coronavirus) but wonder if it is just a cold, the flu, or allergies? Answer a few short questions to find out!</p> <!--this provides for the survey; a hook and description-->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!-- this button transistions the user to the first question-->
 	
@@ -185,7 +186,7 @@ If you press the back button and select a new answer the code still accounts for
 	</div>
 	
     	<div id="content" class="w3-container"> <!-- creates a break in the page; so that the question is lower down and not in the title-->
-        <p>Are you experiencing dizziness or nausea?</p>    
+        <p>Are you experiencing dry coughing?</p>    
     	</div>
 	
 	<a href="#two"  onclick="concussionAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the concussion count by one-->
@@ -198,8 +199,9 @@ If you press the back button and select a new answer the code still accounts for
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Was there a loss of consciousness after the accident?</p>
+	<p>Are you experiencing shortness of breath?</p>
 	</div>
+	
 	<a href="#three"  onclick="concussionAdd();" class="w3-btn w3-black">Yes</a>
         <a href="#three"  onclick="minorAdd();" class="w3-btn w3-black">No</a>
 </div>	<!-- the multple divs are containters for the multiple questions-->
@@ -210,7 +212,7 @@ If you press the back button and select a new answer the code still accounts for
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Can you stand balanced with your eyes closed & hands on your hips for at least 10 seconds?</p> <!--This prints the third question-->
+		<p>Are you sneezing?</p> <!--This prints the third question-->
 	</div>
 	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
         <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
@@ -222,11 +224,85 @@ If you press the back button and select a new answer the code still accounts for
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you remember what you ate for your last meal?</p>
+	<p>Do you have a runny or stuffy nose?</p>
 	</div>
+	
 	<a href="#results"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--the #results will take the user to the resluts page after answering the final question-->
         <a href="#results"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
 </div>	
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you sneezing?</p> <!--This prints the third question-->
+	</div>
+	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you sneezing?</p> <!--This prints the third question-->
+	</div>
+	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you sneezing?</p> <!--This prints the third question-->
+	</div>
+	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you sneezing?</p> <!--This prints the third question-->
+	</div>
+	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+	
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you sneezing?</p> <!--This prints the third question-->
+	</div>
+	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+	
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you sneezing?</p> <!--This prints the third question-->
+	</div>
+	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+	
 	<!--HEEEEEEEEEEYYYYYYY REMEMBER TO MAKE A CALCULATE PAGE TO DO THE doMathAdd function DOOOONT FORGET OR IN RESULTS DO THAT FUNCTION THEN DISPLAY RESULTS-->
 	
 <div class="page" id="results">	<!--the id indicates that this page should be recoginzed as the results page within the code-->
