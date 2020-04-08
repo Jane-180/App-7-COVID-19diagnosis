@@ -99,7 +99,7 @@ If you press the back button and select a new answer the code still accounts for
             minor_count = minor_count + 1;	//this function will increase the minor head injury count by one each time the function is called
         } */
 	
-	function doMathAdd (){
+	function doMathAdd(){
 		var covid_count = covidrare_count + covidsome_count + covidcom_count //this is the total count for covid (the summative value of it's subvariables)
 		var cold_count = coldrare_count + coldsome_count + coldcom_count
 		var flu_count = flusome_count + flucom_count
@@ -108,10 +108,20 @@ If you press the back button and select a new answer the code still accounts for
 	
 	function display_results(){
 		var resultText = document.getElementById("result");
+		var covidPercent= (covid_count / (covid_count + cold_count + flu_count + allergy_count)) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
+		var coldPercent= (cold_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
+		var fluPercent= (flu_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
+		var allergyPercent= (allergy_count / (covid_count + cold_count + flu_count + allergy_count)) * 100
+		resultText.innerHTML = "Probability it is a minor head injury =" + minorPercent + "%<br> Probability it is a concussion =" + concussionPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values (also the minorPercent and concussionPercent are not glowing orange?)
+	//this function will do the math and print results onclick for the results page
+		
+	/*function display_results(){
+		var resultText = document.getElementById("result");
 		var concussionPercent= (concussion_count / (concussion_count + minor_count)) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
 		var minorPercent= (minor_count / (concussion_count + minor_count)) * 100; //proper math using variables also within the function so this math will be calculated whenever the results button is pressed and display called for
 		resultText.innerHTML = "Probability it is a minor head injury =" + minorPercent + "%<br> Probability it is a concussion =" + concussionPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values (also the minorPercent and concussionPercent are not glowing orange?)
-		}
+		} */
+		
 	//formality to have script at the top
 	//this function will do the math and print results onclick for the results page
 	
@@ -217,6 +227,7 @@ If you press the back button and select a new answer the code still accounts for
 	<a href="#results"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--the #results will take the user to the resluts page after answering the final question-->
         <a href="#results"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
 </div>	
+	<!--HEEEEEEEEEEYYYYYYY REMEMBER TO MAKE A CALCULATE PAGE TO DO THE doMathAdd function DOOOONT FORGET OR IN RESULTS DO THAT FUNCTION THEN DISPLAY RESULTS-->
 	
 <div class="page" id="results">	<!--the id indicates that this page should be recoginzed as the results page within the code-->
 	<div class="w3-container w3-flat-carrot">
