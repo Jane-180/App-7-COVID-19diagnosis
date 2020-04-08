@@ -21,6 +21,7 @@ Assist in detecting symptoms of COVID-19 from cold, flu, or allergies
 Known Issues:
 If you press the back button and select a new answer the code still accounts for the old answer this changing the actual percentage. So no going back to previous questions.
 also the calculation for the coughing question for a cold it is common but not neccessarly dry, but I just classified a yes response as +1 anyways
+also the fever question was difficult to fully assign points for the cold symptoms because a fever is only short lived
 -->
 
    <head> 
@@ -170,13 +171,15 @@ also the calculation for the coughing question for a cold it is common but not n
 </div> <!--this divides the page into the next section which will have smnaller font and a different position-->
 	
 <div id="content" class="w3-container">
-	<p>Are you feeling like you might have COVID-19 (coronavirus) but wonder if it is just a cold, the flu, or allergies? Answer a few short questions to find out!</p> <!--this provides for the survey; a hook and description-->
+	<p>Are you feeling like you might have COVID-19 (coronavirus) but wonder if it is just a cold, the flu, or allergies? Answer 10 short questions to find out!</p> <!--this provides for the survey; a hook and description-->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!-- this button transistions the user to the first question-->
 	
 	<center><img src="https://miro.medium.com/max/1224/1*cWbwiv72RJzrX3Xa8EEL5g.jpeg" alt="head pain"/></center> <!--this will include a resizable image to the title page and this code instructs it to be center on the screen; this image will go between the title/survey discription and the diclaimner so the disclaimer is further down; URL to original source of the image included: this will tell the code to display the image from that website I Did not create the image https://www.nicepng.com/downpng/u2y3w7r5w7r5w7t4_tension-acupuncture-headache-cartoon-png/-->
 	
-	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code 			does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
+	<p>Answer the questions in order. Do not backtrack for best results.</p>
+	
+	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
@@ -227,80 +230,80 @@ also the calculation for the coughing question for a cold it is common but not n
 	<p>Do you have a runny or stuffy nose?</p>
 	</div>
 	
-	<a href="#results"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--the #results will take the user to the resluts page after answering the final question-->
+	<a href="#five"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--the #results will take the user to the resluts page after answering the final question-->
+        <a href="#five"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+
+<div class="page" id="five">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p> <!--This prints the third question-->
+	</div>
+	<a href="#sixr"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#six"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+
+<div class="page" id="six">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a persistancing fever?</p> <!--This prints the third question-->
+	</div>
+	<a href="#seven"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#seven"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+
+<div class="page" id="seven">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 7</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you feeling tired and weak?</p> <!--This prints the third question-->
+	</div>
+	<a href="#eight"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#eight"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+
+<div class="page" id="eight">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 8</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Have you been experiencing headaches recently?</p> <!--This prints the third question-->
+	</div>
+	<a href="#nine"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#nine"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+	
+<div class="page" id="nine">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 9</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you body aches and pains?</p> <!--This prints the third question-->
+	</div>
+	<a href="#ten"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+        <a href="#ten"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
+</div>	
+	
+<div class="page" id="ten">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 10</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Are you experiencing diarrhea?</p> <!--This prints the third question-->
+	</div>
+	<a href="#results"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
         <a href="#results"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
-</div>	
-
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Are you sneezing?</p> <!--This prints the third question-->
-	</div>
-	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
-</div>	
-
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Are you sneezing?</p> <!--This prints the third question-->
-	</div>
-	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
-</div>	
-
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Are you sneezing?</p> <!--This prints the third question-->
-	</div>
-	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
-</div>	
-
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Are you sneezing?</p> <!--This prints the third question-->
-	</div>
-	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
-</div>	
-	
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Are you sneezing?</p> <!--This prints the third question-->
-	</div>
-	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
-</div>	
-	
-<div class="page" id="three">
-	<div class="w3-container w3-flat-carrot">
-		<h1>Question 3</h1>
-	</div>
-	
-	<div id="content" class="w3-container">
-		<p>Are you sneezing?</p> <!--This prints the third question-->
-	</div>
-	<a href="#four"  onclick="minorAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#four"  onclick="concussionAdd();" class="w3-btn w3-black">No</a>
 </div>	
 	
 	<!--HEEEEEEEEEEYYYYYYY REMEMBER TO MAKE A CALCULATE PAGE TO DO THE doMathAdd function DOOOONT FORGET OR IN RESULTS DO THAT FUNCTION THEN DISPLAY RESULTS-->
