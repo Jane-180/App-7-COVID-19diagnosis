@@ -31,18 +31,19 @@ If you press the back button and select a new answer the code still accounts for
    </head> 
 
 <script>
-        var covid_count = 0; //this is the total count for covid it will eventually be the summative value of it's subvariables
+     
+	//SUB VARIABLES FOR EACH ILLNESS LISTED BELOW
 		var covidrare_count = 0; //the count for symptoms that rarely happen in covid
 		var covidsome_count = 0; //the count for symptoms that sometimes occur with covid
 		var covidcom_count = 0; //the count for symptoms that commonlly occur in covid
-        var cold_count = 0;
+       
 		var coldrare_count = 0;
 		var coldsome_count = 0;
 		var coldcom_count = 0;
-	var flu_count = 0;
+	
 		var flusome_count = 0;
 		var flucom_count = 0;
-	var allergy_count = 0;
+	
 		var allergyrare_count = 0;
 		var allergysome_count = 0;
 		var allergycom_count = 0;
@@ -51,13 +52,41 @@ If you press the back button and select a new answer the code still accounts for
 	function covidrareAdd() {
 		covidrare_count = covidrare_count + 0.333
 	};
-	
 	function covidsomeAdd() {
 		covidsome_count = covidsome_count + 0.667
 	};
-	
 	function covidcomAdd() {
 		covidcom_count = covidcom_count + 1
+	};
+	
+	
+	function coldrareAdd() {
+		coldrare_count = coldrare_count + 0.333
+	};
+	function covidsomeAdd() {
+		coldsome_count = coldsome_count + 0.667
+	};
+	function covidcomAdd() {
+		coldcom_count = coldcom_count + 1
+	};
+	
+	
+	function flusomeAdd() {
+		flusome_count = flusome_count + 0.667
+	};
+	function flucomAdd() {
+		flucom_count = flucom_count + 1
+	};
+	
+	
+	function allergyrareAdd() {
+		allergyrare_count = allergyrare_count + 0.333
+	};
+	function allergysomeAdd() {
+		allergysome_count = allergysome_count + 0.667
+	};
+	function covidcomAdd() {
+		allergycom_count = allergycom_count + 1
 	};
 	
        /* function concussionAdd(){
