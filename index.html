@@ -48,7 +48,19 @@ If you press the back button and select a new answer the code still accounts for
 		var allergycom_count = 0;
 //the variables are defined as their illness names and follow the same pattern described in deatil for the covid variables. the variable's starting values are zero before the questions are answered.
 
-        function concussionAdd(){
+	function covidrareAdd() {
+		covidrare_count = covidrare_count + 0.333
+	};
+	
+	function covidsomeAdd() {
+		covidsome_count = covidsome_count + 0.667
+	};
+	
+	function covidcomAdd() {
+		covidcom_count = covidcom_count + 1
+	};
+	
+       /* function concussionAdd(){
             concussion_count = concussion_count + 1;
 		//this function will increase the concusion count by one each time the function is called (when the user selects a concussion answer) 
 
@@ -56,7 +68,15 @@ If you press the back button and select a new answer the code still accounts for
 
         function minorAdd(){
             minor_count = minor_count + 1;	//this function will increase the minor head injury count by one each time the function is called
-        }
+        } */
+	
+	function doMathAdd (){
+		var covid_count = covidrare_count + covidsome_count + covidcom_count //this is the total count for covid (the summative value of it's subvariables)
+		var cold_count = coldrare_count + coldsome_count + coldcom_count
+		var flu_count = flusome_count + flucom_count
+		var allergy_count = allergyrare_count + allergysome_count + allergycom_count
+	};
+	
 	function display_results(){
 		var resultText = document.getElementById("result");
 		var concussionPercent= (concussion_count / (concussion_count + minor_count)) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
