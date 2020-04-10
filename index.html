@@ -96,10 +96,10 @@ also the fever question was difficult to fully assign points for the cold sympto
 	function display_results(){
 		
 		var resultText = document.getElementById("result");
-		var covidPercent= (covid_count / (covid_count + cold_count + flu_count + allergy_count)) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
-		var coldPercent= (cold_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
-		var fluPercent= (flu_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
-		var allergyPercent= (allergy_count / (covid_count + cold_count + flu_count + allergy_count)) * 100;
+		var covidPercent= (covid_count / 10) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
+		var coldPercent= (cold_count / 10) * 100;
+		var fluPercent= (flu_count / 10) * 100;
+		var allergyPercent= (allergy_count / 10) * 100;
 		resultText.innerHTML = "Probability it is COVID-19 (coronavirus) =" + covidPercent + "%<br> Probability it is a Cold =" + coldPercent + "%<br> Probability it is the Flu =" + fluPercent + "%<br> Probability it is Allergies =" + allergyPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values (also the minorPercent and concussionPercent are not glowing orange?)
 	}
 	
