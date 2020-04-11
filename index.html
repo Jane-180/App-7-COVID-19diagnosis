@@ -61,11 +61,11 @@ also the fever question was difficult to fully assign points for the cold sympto
     google.charts.setOnLoadCallback(drawChart);
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
-        ["Element", "Density", { role: "style" } ],
-        ["Copper", 8.94, "#b87333"],
-        ["Silver", 10.49, "silver"],
-        ["Gold", 19.30, "gold"],
-        ["Platinum", 21.45, "color: #e5e4e2"]
+        ["Probability", "Percentage", { role: "style" } ],
+        ["COVID-19 (coronavirus)", 8.94, "red"],
+        ["Common Cold", 10.49, "silver"],
+        ["Flu", 19.30, "gold"],
+        ["Allergies", 21.45, "green"]
       ]);
 
       var view = new google.visualization.DataView(data);
