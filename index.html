@@ -30,6 +30,33 @@ also the fever question was difficult to fully assign points for the cold sympto
       <meta name="apple-mobile-web-app-capable" content="yes">
       <link rel="stylesheet" href="w3.css">
       <link rel="stylesheet" href="w3-colors-flat.css"> <!-- this is styles of the website assists with the apps apperance and screen size-->
+	   
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+
+        chart.draw(data, options);
+      }
+    </script>   
+	   
    </head> 
 
 <script>
@@ -303,6 +330,8 @@ also the fever question was difficult to fully assign points for the cold sympto
 	<p id="result"> </p> <!-- This paragraph will make the results page display the results-->
 	
 	<a onclick= "display_results();"	class="w3-btn w3-black"> Click for Results</a> <!-- this button will cause the entire function from above to take place; the results calculations will be done and the results will be displayed when the user clicks "click for results button"-->
+	
+	<div id="piechart" style="width: 900px; height: 500px;"></div>
 	
 </div> <!--this div closes the division of the page-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
