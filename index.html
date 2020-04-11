@@ -22,6 +22,7 @@ Known Issues:
 If you press the back button and select a new answer the code still accounts for the old answer this changing the actual percentage. So no going back to previous questions.
 also the calculation for the coughing question for a cold it is common but not neccessarly dry, but I just classified a yes response as +1 anyways
 also the fever question was difficult to fully assign points for the cold symptoms because a fever is only short lived
+The pie-chart does not depict the correct values that correspond with the calculated values
 -->
 
    <head> 
@@ -33,126 +34,84 @@ also the fever question was difficult to fully assign points for the cold sympto
 	   
 	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
+      google.charts.load('current', {'packages':['corechart']}); //charts created by google charts
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-          ['Probabilty', 'Percentage'],
-          ['COVID-19 (coronavirus)',     5],
-          ['Common Cold',      7],
-          ['Flu',  7],
-          ['Allergies', 10],
+          ['Probabilty', 'Percentage'], 
+          ['COVID-19 (coronavirus)',     5], //name on pie-chart the value 5 is a set value of what portion the pie chart (I can not figure out how to change this value to match the calculated value)
+          ['Common Cold',      7], //second name on pie chart
+          ['Flu',  7], //thrid name on pie chart
+          ['Allergies', 10], //4th name on chart
         ]);
 
         var options = {
-          title: 'Diagnosis Results: Probability of Illness'
+          title: 'Diagnosis Results: Probability of Illness' //title of chart
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('piechart')); //this is to print the chart
 
         chart.draw(data, options);
       }
     </script>   
 	   
-	  <script type="text/javascript">
-    google.charts.load("current", {packages:["corechart"]});
-    google.charts.setOnLoadCallback(drawChart);
- function drawChart() {
-      var data = google.visualization.arrayToDataTable([
-        ["Probability", "Percentage", { role: "style" } ],
-        ["COVID-19 (coronavirus)", 8.94, "red"],
-        ["Common Cold", 10.49, "silver"],
-        ["Flu", 19.30, "gold"],
-        ["Allergies", 21.45, "green"]
-      ]);
-
-      var view = new google.visualization.DataView(data);
-      view.setColumns([0, 1,
-                       { calc: "stringify",
-                         sourceColumn: 1,
-                         type: "string",
-                         role: "annotation" },
-                       2]);
-
-      var options = {
-        title: "Diagnosis Results: Probability of Illness Based on Symptoms"
-        width: 600,
-        height: 400,
-        bar: {groupWidth: "95%"},
-        legend: { position: "none" },
-      };
-      var chart = new google.visualization.BarChart(document.getElementById("barchart_values"));
-      chart.draw(view, options);
-  }
-  </script> 
-	   
-	   
    </head> 
 
 <script>
-		var covid_count = 0; 
+		var covid_count = 0; //variable to count up the amount of sympotoms that relate to COVID-19
        
-		var cold_count = 0;
+		var cold_count = 0; //variable to count up the amount of sympotoms that relate to the common cold
 		
-		var flu_count = 0;
+		var flu_count = 0; //variable to count up the amount of sympotoms that relate to the flu
 	
-		var allergy_count = 0;
+		var allergy_count = 0; //variable to count up the amount of sympotoms that relate to allergies
 		
 //the variables are defined as their illness names and follow the same pattern described in deatil for the covid variables. the variable's starting values are zero before the questions are answered.
 
-	function covidrareAdd() {
-		covid_count = covid_count + 0.333;
+	function covidrareAdd() { //function to add up all the values realted to a sympotom that is rare for COVID-19
+		covid_count = covid_count + 0.333; //+0.333 accounts for how rare sympotoms should not be weighted the same as common sympotoms
 	}
-	function covidsomeAdd() {
-		covid_count = covid_count + 0.667;
+	function covidsomeAdd() { //function to add up all the values realted to a sympotom that occurs sometimes for COVID-19
+		covid_count = covid_count + 0.667; //+0.667 accounts for how "sometimes" sympotoms should not be weighted the same as common sympotoms
 	}
-	function covidcomAdd() {
+	function covidcomAdd() { //function to add up all the values realted to a sympotom that is common for COVID-19
 		covid_count = covid_count + 1;
 	}
 	
 	
-	function coldrareAdd() {
-		cold_count = cold_count + 0.333;
+	function coldrareAdd() { //function to add up all the values realted to a sympotom that is rare for a cold
+		cold_count = cold_count + 0.333; //THESE VALUES ARE EXPLAINED THE SAME WAY AS MENTIONED FOR THE COVID COUNTS
 	}
-	function coldsomeAdd() {
+	function coldsomeAdd() { //function to add up all the values realted to a sympotom that occurs sometimes for a cold
 		cold_count = cold_count + 0.667;
 	}
-	function coldcomAdd() {
+	function coldcomAdd() { //function to add up all the values realted to a sympotom that is common for a cold
 		cold_count = cold_count + 1;
 	}
 	
 	
-	function flusomeAdd() {
+	function flusomeAdd() { //function to add up all the values realted to a sympotom that occurs sometimes for the flu
 		flu_count = flu_count + 0.667;
 	}
-	function flucomAdd() {
+	function flucomAdd() { //function to add up all the values realted to a sympotom that is common for the flu
 		flu_count = flu_count + 1;
 	}
 	
 	
-	function allergyrareAdd() {
+	function allergyrareAdd() { //function to add up all the values realted to a sympotom that is rare for allergies
 		allergy_count = allergy_count + 0.333;
 	}
-	function allergysomeAdd() {
+	function allergysomeAdd() { //function to add up all the values realted to a sympotom that occurs sometimes for allergies
 		allergy_count = allergy_count + 0.667;
 	}
-	function allergycomAdd() {
+	function allergycomAdd() { //function to add up all the values realted to a sympotom that is common for allergies
 		allergy_count = allergy_count + 1;
 	}
 	
-       /* function concussionAdd(){
-            concussion_count = concussion_count + 1;
-		//this function will increase the concusion count by one each time the function is called (when the user selects a concussion answer) 
-
-        }
-
-        function minorAdd(){
-            minor_count = minor_count + 1;	//this function will increase the minor head injury count by one each time the function is called
-        } */
-	
-	function display_results(){
+       
+	function display_results(){ //this function will do the math and print results onclick for the results page
 		
 		var resultText = document.getElementById("result");
 		var covidPercent= (covid_count / 10) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
@@ -161,18 +120,6 @@ also the fever question was difficult to fully assign points for the cold sympto
 		var allergyPercent= (allergy_count / 10) * 100;
 		resultText.innerHTML = "Probability it is COVID-19 (coronavirus) =" + covidPercent + "%<br> Probability it is a Cold =" + coldPercent + "%<br> Probability it is the Flu =" + fluPercent + "%<br> Probability it is Allergies =" + allergyPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values (also the minorPercent and concussionPercent are not glowing orange?)
 	}
-	
-	//this function will do the math and print results onclick for the results page
-		
-	/*function display_results(){
-		var resultText = document.getElementById("result");
-		var concussionPercent= (concussion_count / (concussion_count + minor_count)) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
-		var minorPercent= (minor_count / (concussion_count + minor_count)) * 100; //proper math using variables also within the function so this math will be calculated whenever the results button is pressed and display called for
-		resultText.innerHTML = "Probability it is a minor head injury =" + minorPercent + "%<br> Probability it is a concussion =" + concussionPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values (also the minorPercent and concussionPercent are not glowing orange?)
-		} */
-		
-	//formality to have script at the top
-	//this function will do the math and print results onclick for the results page
 	
 // This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
        var docMod = document.lastModified;
@@ -362,8 +309,6 @@ also the fever question was difficult to fully assign points for the cold sympto
 	<p id="result"> </p> <!-- This paragraph will make the results page display the results-->
 	
 	<a onclick= "display_results();"	class="w3-btn w3-black"> Click for Results</a> <!-- this button will cause the entire function from above to take place; the results calculations will be done and the results will be displayed when the user clicks "click for results button"-->
-	
-	<div id="barchart_values" style="width: 900px; height: 300px;"></div>
 	
 	<div id="piechart" style="width: 900px; height: 500px;"></div>
 	
