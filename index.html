@@ -114,11 +114,11 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	function display_results(){ //this function will do the math and print results onclick for the results page
 		
 		var resultText = document.getElementById("result");
-		var covidPercent= (covid_count / 10) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of concussion will also occur
-		var coldPercent= (cold_count / 10) * 100;
-		var fluPercent= (flu_count / 10) * 100;
-		var allergyPercent= (allergy_count / 10) * 100;
-		resultText.innerHTML = "Probability it is COVID-19 (coronavirus) =" + covidPercent + "%<br> Probability it is a Cold =" + coldPercent + "%<br> Probability it is the Flu =" + fluPercent + "%<br> Probability it is Allergies =" + allergyPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values (also the minorPercent and concussionPercent are not glowing orange?)
+		var covidPercent= (covid_count / 10) * 100; // this variable is within the function to display results so when the results are diplayed the math for the percent of COVID-19 will occur 
+		var coldPercent= (cold_count / 10) * 100; //math for cold percentage
+		var fluPercent= (flu_count / 10) * 100; //math for flu percentage
+		var allergyPercent= (allergy_count / 10) * 100; //math for allergy percentage
+		resultText.innerHTML = "Probability it is COVID-19 (coronavirus) =" + covidPercent + "%<br> Probability it is a Cold =" + coldPercent + "%<br> Probability it is the Flu =" + fluPercent + "%<br> Probability it is Allergies =" + allergyPercent +"%"; //the % signs after the +value+ will print a percentage this will be the words displayed on the results page and the values
 	}
 	
 // This will help you know if you are looking at the new version of the file or if there is a delay on GitHub.
@@ -167,11 +167,11 @@ The pie-chart does not depict the correct values that correspond with the calcul
 <div id="content" class="w3-container">
 	<p>Are you feeling like you might have COVID-19 (coronavirus) but wonder if it is just a cold, the flu, or allergies? Answer 10 short questions to find out!</p> <!--this provides for the survey; a hook and description-->
 	
-	<p>Answer the questions in order. Do not backtrack for best results.</p>
+	<p>Answer the questions in order. Do not backtrack for best results.</p> <!--This is a warning mentioned further in the Known issues-->
 	
 	<a href="#one" class="w3-btn w3-grey w3-round"> Get Started </a> <!-- this button transistions the user to the first question-->
 	
-	<center><img src="https://png2.cleanpng.com/sh/bdc3afae1c73753629aac6ec08fb6fe5/L0KzQYm3VMMxN6J7fZH0aYP2gLBuTgN2ephue9N1LX3kg7y0kvV0eJp3eeZ4cj3wdbXwgBlvbV5uhth1dXXxirK0kCVzb5Z3RdVqcoTyf7A0jfF0a5J3eZ8AYXW5SYnoVBJiOJdmTpCBOUO1Q4G5U8E2OmY1TqMCOUm6RoO4TwBvbz==/kisspng-surgical-mask-respirator-medicine-influenza-surger-cartoon-mascara-5ae698a7ba0fa6.6932302315250617997621.png" alt="coughing mask"/></center> <!--this will include a resizable image to the title page and this code instructs it to be center on the screen; this image will go between the title/survey discription and the diclaimner so the disclaimer is further down; URL to original source of the image included: this will tell the code to display the image from that website I Did not create the image https://www.nicepng.com/downpng/u2y3w7r5w7r5w7t4_tension-acupuncture-headache-cartoon-png/-->
+	<center><img src="https://png2.cleanpng.com/sh/bdc3afae1c73753629aac6ec08fb6fe5/L0KzQYm3VMMxN6J7fZH0aYP2gLBuTgN2ephue9N1LX3kg7y0kvV0eJp3eeZ4cj3wdbXwgBlvbV5uhth1dXXxirK0kCVzb5Z3RdVqcoTyf7A0jfF0a5J3eZ8AYXW5SYnoVBJiOJdmTpCBOUO1Q4G5U8E2OmY1TqMCOUm6RoO4TwBvbz==/kisspng-surgical-mask-respirator-medicine-influenza-surger-cartoon-mascara-5ae698a7ba0fa6.6932302315250617997621.png" alt="coughing mask"/></center> <!--this will include a resizable image to the title page and this code instructs it to be center on the screen; this image will go between the title/survey discription and the diclaimner so the disclaimer is further down; URL to original source of the image included: this will tell the code to display the image from that website I Did not create the image -->
 	
 	<p>The following code has been developed by students and/or researchers of the Freshman Research Initiative DIY Diagnostics Stream at The University of Texas at Austin.  This code is shared for demonstration purposes and should not be considered a product -- it is for entertainment purposes only. Any user of this code does so at their own risk. Members of the DIY Stream, FRI, and The University of Texas system are not liable for anything related to this code.</p>
  	
@@ -186,8 +186,8 @@ The pie-chart does not depict the correct values that correspond with the calcul
         <p>Are you experiencing dry coughing?</p>    
     	</div>
 	
-	<a href="#two"  onclick="covidcomAdd(); coldcomAdd(); flucomAdd(); allergyrareAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the concussion count by one-->
-        <a href="#two"  class="w3-btn w3-black">No</a> <!--when a response is chosen is No is clicked it increases the minor head injury count by one-->
+	<a href="#two"  onclick="covidcomAdd(); coldcomAdd(); flucomAdd(); allergyrareAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the cold, allergy, and covid count by the various amounts explained in the scrpit functions above-->
+        <a href="#two"  class="w3-btn w3-black">No</a> <!--when a response is chosen is No is clicked does nothing other than transition to the next page-->
 </div>
 
 <div class="page" id="two"> <!--new page; page two-->
@@ -196,10 +196,10 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	</div>
 	
 	<div id="content" class="w3-container">
-	<p>Are you experiencing shortness of breath?</p>
+	<p>Are you experiencing shortness of breath?</p> <!--prints symptom question-->
 	</div>
 	
-	<a href="#three"  onclick="covidsomeAdd();" class="w3-btn w3-black">Yes</a>
+	<a href="#three"  onclick="covidsomeAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the covid count by the various amounts explained in the scrpit functions above-->
         <a href="#three"  class="w3-btn w3-black">No</a>
 </div>	<!-- the multple divs are containters for the multiple questions-->
 	
@@ -224,7 +224,7 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	<p>Do you have a runny or stuffy nose?</p>
 	</div>
 	
-	<a href="#five"  onclick="covidrareAdd(); coldcomAdd(); flusomeAdd(); allergycomAdd();" class="w3-btn w3-black">Yes</a> <!--the #results will take the user to the resluts page after answering the final question-->
+	<a href="#five"  onclick="covidrareAdd(); coldcomAdd(); flusomeAdd(); allergycomAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the flu, cold, allergy, and covid count by the various amounts explained in the scrpit functions above-->
         <a href="#five"  class="w3-btn w3-black">No</a>
 </div>	
 
@@ -234,10 +234,9 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a sore throat?</p> <!--This prints the third question-->
+		<p>Do you have a sore throat?</p> <!--This prints the fifth question-->
 	</div>
-	<a href="#six"  onclick="covidsomeAdd(); coldcomAdd(); flusomeAdd(); allergysomeAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#six"  class="w3-btn w3-black">No</a>
+	<a href="#six"  onclick="covidsomeAdd(); coldcomAdd(); flusomeAdd(); allergysomeAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the flu, cold, allergy, and covid count by the various amounts explained in the scrpit functions above-->
 </div>	
 
 <div class="page" id="six">
@@ -246,9 +245,9 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Do you have a persistancing fever?</p> <!--This prints the third question-->
+		<p>Do you have a persistancing fever?</p> <!--This prints the sixth question-->
 	</div>
-	<a href="#seven"  onclick="covidcomAdd(); flucomAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+	<a href="#seven"  onclick="covidcomAdd(); flucomAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the flu and covid count by the various amounts explained in the scrpit functions above-->
         <a href="#seven"  class="w3-btn w3-black">No</a>
 </div>	
 
@@ -258,9 +257,9 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you feeling tired and weak?</p> <!--This prints the third question-->
+		<p>Are you feeling tired and weak?</p> <!--This prints the seventh question-->
 	</div>
-	<a href="#eight"  onclick="covidsomeAdd(); coldsomeAdd(); flucomAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+	<a href="#eight"  onclick="covidsomeAdd(); coldsomeAdd(); flucomAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the cold, flu, and covid count by the various amounts explained in the scrpit functions above-->
         <a href="#eight"  class="w3-btn w3-black">No</a>
 </div>	
 
@@ -270,9 +269,9 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Have you been experiencing headaches recently?</p> <!--This prints the third question-->
+		<p>Have you been experiencing headaches recently?</p> <!--This prints the eigth question-->
 	</div>
-	<a href="#nine"  onclick="covidsomeAdd(); coldrareAdd(); flucomAdd(); allergysomeAdd()" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+	<a href="#nine"  onclick="covidsomeAdd(); coldrareAdd(); flucomAdd(); allergysomeAdd()" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the flu, cold, allergy, and covid count by the various amounts explained in the scrpit functions above-->
         <a href="#nine"  class="w3-btn w3-black">No</a>
 </div>	
 	
@@ -282,9 +281,9 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you body aches and pains?</p> <!--This prints the third question-->
+		<p>Are you body aches and pains?</p> <!--This prints the ninth question-->
 	</div>
-	<a href="#ten"  onclick="covidsomeAdd(); coldcomAdd(); flucomAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
+	<a href="#ten"  onclick="covidsomeAdd(); coldcomAdd(); flucomAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the flu, cold, and covid count by the various amounts explained in the scrpit functions above-->
         <a href="#ten"  class="w3-btn w3-black">No</a>
 </div>	
 	
@@ -294,13 +293,11 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Are you experiencing diarrhea?</p> <!--This prints the third question-->
+		<p>Are you experiencing diarrhea?</p> <!--This prints the final question-->
 	</div>
-	<a href="#results"  onclick="covidsomeAdd(); flusomeAdd();" class="w3-btn w3-black">Yes</a> <!--after choosing yes or no the user will be directed to the fourth page. That's what the #four indicates-->
-        <a href="#results"  class="w3-btn w3-black">No</a>
+	<a href="#results"  onclick="covidsomeAdd(); flusomeAdd();" class="w3-btn w3-black">Yes</a> <!--when a response is chosen is Yes is clicked it increases the flu, and covid count by the various amounts explained in the scrpit functions above-->
+        <a href="#results"  class="w3-btn w3-black">No</a> <!-- this will direct the user to the results page-->
 </div>	
-	
-	<!--HEEEEEEEEEEYYYYYYY REMEMBER TO MAKE A CALCULATE PAGE TO DO THE doMathAdd function DOOOONT FORGET OR IN RESULTS DO THAT FUNCTION THEN DISPLAY RESULTS-->
 	
 <div class="page" id="results">	<!--the id indicates that this page should be recoginzed as the results page within the code-->
 	<div class="w3-container w3-flat-carrot">
@@ -310,7 +307,7 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	
 	<a onclick= "display_results();"	class="w3-btn w3-black"> Click for Results</a> <!-- this button will cause the entire function from above to take place; the results calculations will be done and the results will be displayed when the user clicks "click for results button"-->
 	
-	<div id="piechart" style="width: 900px; height: 500px;"></div>
+	<div id="piechart" style="width: 900px; height: 500px;"></div> <!-- This is to print the piechart deatiled above in the head -->
 	
 </div> <!--this div closes the division of the page-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
