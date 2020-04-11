@@ -62,10 +62,10 @@ also the fever question was difficult to fully assign points for the cold sympto
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Probability", "Percentage", { role: "style" } ],
-        ["COVID-19 (coronavirus)", covid_count/10, "red"],
-        ["Common Cold", cold_count/10, "silver"],
-        ["Flu", (flu_count/10), "gold"],
-        ["Allergies", (allergy_count/10), "green"]
+        ["COVID-19 (coronavirus)", 4, "red"],
+        ["Common Cold", 7, "blue"],
+        ["Flu", 7, "gold"],
+        ["Allergies", 10, "green"]
       ]);
 
       var view = new google.visualization.DataView(data);
