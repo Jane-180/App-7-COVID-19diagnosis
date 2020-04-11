@@ -62,10 +62,10 @@ also the fever question was difficult to fully assign points for the cold sympto
     function drawChart() {
       var data = google.visualization.arrayToDataTable([
         ["Probability", "Percentage", { role: "style" } ],
-        ["COVID-19 (coronavirus)", 8.94, "red"],
-        ["Common Cold", 10.49, "silver"],
-        ["Flu", 19.30, "gold"],
-        ["Allergies", 21.45, "green"]
+        ["COVID-19 (coronavirus)", covid_count/10, "red"],
+        ["Common Cold", cold_count/10, "silver"],
+        ["Flu", (flu_count/10), "gold"],
+        ["Allergies", (allergy_count/10), "green"]
       ]);
 
       var view = new google.visualization.DataView(data);
@@ -77,7 +77,7 @@ also the fever question was difficult to fully assign points for the cold sympto
                        2]);
 
       var options = {
-        title: "Density of Precious Metals, in g/cm^3",
+        title: "Diagnosis Results: Probability of Illness Based on Symptoms,
         width: 600,
         height: 400,
         bar: {groupWidth: "95%"},
