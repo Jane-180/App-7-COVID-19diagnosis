@@ -39,6 +39,7 @@ The pie-chart does not depict the correct values that correspond with the calcul
 
       function drawChart() {
 
+	     //I got this script section of code below about the piechart from this youtube video: https://www.youtube.com/watch?v=-DQP4fpmJpc and google charts
         var data = google.visualization.arrayToDataTable([
           ['Probabilty', 'Percentage'], 
           ['COVID-19 (coronavirus)',     5], //name on pie-chart the value 5 is a set value of what portion the pie chart (I can not figure out how to change this value to match the calculated value)
@@ -54,7 +55,7 @@ The pie-chart does not depict the correct values that correspond with the calcul
         var chart = new google.visualization.PieChart(document.getElementById('piechart')); //this is to print the chart
 
         chart.draw(data, options);
-      }
+      } 
     </script>   
 	   
    </head> 
@@ -308,7 +309,7 @@ The pie-chart does not depict the correct values that correspond with the calcul
 	
 	<a onclick= "display_results();"	class="w3-btn w3-black"> Click for Results</a> <!-- this button will cause the entire function from above to take place; the results calculations will be done and the results will be displayed when the user clicks "click for results button"-->
 	
-	<div id="piechart" style="width: 900px; height: 500px;"></div> <!-- This is to print the piechart deatiled above in the head -->
+	<div id="piechart" style="width: 900px; height: 500px;"></div> <!-- This is to print the piechart deatiled above in the head; this is the cite where I got this piece of code from: https://www.youtube.com/watch?v=-DQP4fpmJpc and from google charts-->
 	
 </div> <!--this div closes the division of the page-->
 <footer class="w3-bottom w3-container w3-flat-carrot">
